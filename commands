@@ -1,0 +1,10 @@
+./gradlew build docker
+docker run -p 8080:8080 -t net.andreinc.commercetools.enricher/commercetools-enricher
+ngrok http 8080
+
+
+customer {
+
+    groovy code
+
+}

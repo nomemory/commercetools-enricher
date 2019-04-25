@@ -1,0 +1,47 @@
+plugins {
+    id "java"
+    id "com.palantir.docker" version "0.21.0"
+    id "org.springframework.boot" version "2.1.4.RELEASE"
+}
+
+bootJar {
+    baseName = 'commercetools-enricher'
+    version =  '1.0-SNAPSHOT'
+}
+
+group 'net.andreinc.commercetools.enricher'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+def jvmSdkVersion = "1.40.0"
+
+dependencies {
+    // SPRING
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.4.RELEASE'
+    compile group: 'org.modelmapper.extensions', name: 'modelmapper-jackson', version: '2.3.2'
+
+
+    // COMMERCE TOOL
+    compile "com.commercetools.sdk.jvm.core:commercetools-models:$jvmSdkVersion"
+    compile "com.commercetools.sdk.jvm.core:commercetools-java-client:$jvmSdkVersion"
+    compile "com.commercetools.sdk.jvm.core:commercetools-convenience:$jvmSdkVersion"
+
+    // Others
+    compile group: 'commons-validator', name: 'commons-validator', version: '1.6'
+
+    // TESTING
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+docker {
+    dependsOn build
+    name "${project.group}/${bootJar.baseName}"
+    files bootJar.archivePath
+    buildArgs(['JAR_FILE': "${bootJar.archiveName}"])
+}

@@ -1,0 +1,22 @@
+{
+  "id": "616bb6e0-056f-4d04-b989-15ab9dfaf4cf",
+  "version": 1,
+  "lastMessageSequenceNumber": 1,
+  "createdAt": "1970-01-01T00:00:00.000Z",
+  "lastModifiedAt": "1970-01-01T00:00:00.000Z",
+  "lastModifiedBy": {
+    "clientId": "D3OhdtHfGYCsdJcC8NY3HTaD",
+    "isPlatformClient": false
+  },
+  "createdBy": {
+    "clientId": "D3OhdtHfGYCsdJcC8NY3HTaD",
+    "isPlatformClient": false
+  },
+  "email": "\"123_05\"",
+  "password": "iitmcz4SYIshH9eA6X06/tgEZyM8hI7SRwfQzFYupaU=$I5YPrwPNHNHe2AifW863rQtCy3z7PjbID3q3DkisPXc=",
+  "addresses": [],
+  "shippingAddressIds": [],
+  "billingAddressIds": [],
+  "isEmailVerified": false,
+  "stores": []
+}
